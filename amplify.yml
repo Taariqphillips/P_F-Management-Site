@@ -3,11 +3,15 @@ frontend:
   phases:
     preBuild:
       commands:
+        - echo "Starting preBuild phase"
         - nvm use 18
         - npm ci
+        - echo "Finished preBuild phase"
     build:
       commands:
+        - echo "Starting build phase"
         - npm run build
+        - echo "Finished build phase"
   artifacts:
     baseDirectory: build
     files:
@@ -15,4 +19,3 @@ frontend:
   cache:
     paths:
       - node_modules/**/*
-      
